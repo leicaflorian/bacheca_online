@@ -1,0 +1,191 @@
+/*
+ * solo in fase di test
+ * 
+ */
+
+.main .card.annunci{
+    flex-basis: 100%;
+}
+
+.main .card .list.verticale{
+	flex-direction: row;
+    justify-content: flex-start;
+    overflow-x: auto;
+    max-height: 180px;
+    overflow-y: auto;
+    min-height: 89px;
+    flex-wrap: wrap;
+}
+
+.main .card .list 
+.commento{
+    background-color: #fff;
+    padding: 8px 8px 8px 16px;
+    display: flex;
+    flex-direction: row;
+    border-bottom: solid 1px #eee;
+    height: 88px;
+    min-height: 88px;
+    box-sizing: border-box;
+        align-items: center;
+    min-width: 250px;
+    flex: 1;
+    margin: .5px;
+}
+
+.pBody .commento{
+    background: #eee;
+    padding: 8px 16px;
+}
+
+.main .card .list 
+.commento:last-child{
+	border-bottom: solid 1px transparent;
+}
+
+.main .card .list 
+.commento .body{
+	flex: 1;	
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+     -webkit-transition: filter 0.3s ease-in-out;
+	-webkit-transition: -webkit-filter 0.3s ease-in-out;
+	transition: -webkit-filter 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out;
+	transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+}
+
+.main .card .list 
+.commento .body.blur{
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2px);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.main .card .list 
+.commento .body div{
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.main .card .list 
+.commento .body .titolo, .pBody .commento .body .titolo{
+	font-size: 16px;
+	font-weight: bold;
+}
+.main .card .list 
+.commento .body .sottotitolo, .pBody .commento .body .sottotitolo{
+	font-size: 14px;
+	opacity: .6;
+	padding-left: 8px;
+}
+.main .card .list 
+.commento .body .data, .pBody .commento .body .data{
+	font-size: 12px;
+	opacity: .6;
+	padding-left: 8px;
+}
+.main .card .list 
+.commento .menu{
+	position: relative;
+}
+
+.main .card .list 
+.commento .menu.hidden, .pBody .commento .menu.hidden{
+	display: none;
+}
+
+
+/*
+ * Stili del popup dove si aggiungono o modificano i commenti
+ */
+.comment_form{
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  overflow: hidden;
+}
+.comment_form .form_item{
+  display: flex;
+  align-items: center;
+	font-size: 14px;
+	padding: 8px 0;
+}
+.comment_form .form_item
+.item_content{
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    min-height: 32px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+}
+
+.comment_form .form_item
+.item_content .select_label{
+	padding-right: 16px;
+}
+.comment_form .form_item
+.item_content select{
+    position: absolute;
+    right: 0;
+    border: none;
+    max-width: 18px;
+    background: transparent;
+    direction: rtl;
+    outline: none;
+    height: 100%;
+}
+
+
+.comment_form .form_item
+.form_label{
+  min-width: 100px;
+  text-align: right;
+  margin-right: 8px;
+  align-self: flex-start;
+  line-height: 32px;
+}
+
+.comment_form .form_item
+textarea{
+	max-width: 100%;
+}
+
+.comment_form .form_item input,
+.comment_form .form_item textarea{
+	min-height: 32px;
+    font-family: inherit;
+    font-size: inherit;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-bottom: solid 1px #9E9E9E;
+}
+
+.comment_form .form_item
+input[type="date"]{
+  min-width: 100px;
+}
+
+.comment_form .form_item
+.checkbox{
+    align-items: center;
+    display: flex;
+}
+.comment_form .form_item
+.checkbox-label{
+  white-space: nowrap;
+  min-width: 200px;
+}
+.comment_form .form_item
+input[type="checkbox"]{
+  margin-right: 8px;
+  min-width: 16px;
+}
+

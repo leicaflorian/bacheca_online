@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME}/$ !-d
+RewriteRule ^([^.]+)/$ http://%{HTTP_HOST}/$1 [L,R=301]
+
+#Se il file non e stato trovato, prova a cercarlo con l'estensione .php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^.]+) $1.php [L]
+
+#Se non esiste alcun file con quel nome, allora mostra la pagina della congregazione
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^.]+) congIndex.php?c=$1 [L]

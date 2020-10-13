@@ -1,0 +1,691 @@
+/*
+ * Schema del template:
+ * Main
+ * 	|
+ * 	|--Toolbar (Header)
+ * 	|		|
+ * 	|		|--Buttons
+ * 	|		|--Text
+ * 	|
+ * 	|--Card (Body)
+ * 	|		|
+ * 	|		|--Toolbar
+ * 	|		|		|
+ * 	|		|		|--Title
+ * 	|		|		|--Spacer
+ * 	|		|		|--Buttons
+ * 	|		|		
+ * 	|		|-- List
+ * 	|		 		|
+ * 	|		 		|--Entry
+ * 	|		 		 		|
+ * 	|		 		 		|-- Body
+ * 	|		 				|-- Footer
+ * 	|
+ * 	|--Footer (Footer)
+ */
+
+html{
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%;
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(238, 238, 238);
+    color: #fff;
+    background: #212121;
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Roboto Slab",serif,"google";
+}
+
+h1, h2, h3{
+    font-weight: normal;
+    font-style: normal;
+    font-family: "Roboto Slab",serif,"google";
+    text-transform: none;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+h1{
+    font-size:54px;
+    font-size:5.4rem;
+}
+h2{
+    font-size:44px;
+    font-size:4.4rem;
+}
+h3{
+    font-size:34px;
+    font-size:3.4rem;
+}
+p{
+    margin: 0;
+    padding: 0;	
+}
+
+/* 
+ * Pulsanti in Material Design.
+ * Possono essere Flat o Raised
+ */
+.material-icons{
+
+}
+
+
+.material-button{
+    background: none;
+    border: none;
+    color: #3e4240;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+    padding: 8px;
+    position: relative;
+}
+
+.material-button.flat{
+
+}
+.material-button.flat.round:hover{
+    background: rgba(0,0,0,.12);
+    border-radius: 50%;
+}
+.material-button.flat.round:active{
+    background: rgba(0,0,0,.25);
+    border-radius: 50%;
+}
+
+.material-button.flat.only-text{
+    width: auto;
+    height: auto;
+}
+
+.material-button.raised{
+    border-radius: 2px;
+    color: #3e4240;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    margin-left: 8px;
+    background: #e0e0e0;
+}
+.material-button.raised.only-text{
+    padding: 8px 16px;
+    width: auto;
+}
+
+.material-button.fav-star{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    display: inline-block;
+    color: #fff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    padding: 8px;
+    border-radius: 20px;
+    background: #bdbdbd;
+    z-index: 2;
+}
+.material-button.fav-star.spin{
+    box-shadow: none;	
+}
+.material-button.fav-star.active{
+    background: #ff9800;
+}
+.material-button.fav-star.hidden{
+    display: none;
+}
+
+.mdl-spinner{
+    width: 48px;
+    height:48px;
+}
+/* 
+ * Contenuto principale del sito
+ */
+.wrap{
+    width: 100%;
+    /*max-width: 960px;*/
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+.header{
+    /*max-width: 960px;*/
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 40px 0;
+    display: -webkit-box;  
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+
+.main{
+    min-height: 300px;
+    margin-top: 152px;
+    background: #212121;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+/* 
+ * Toolbar principale del sito, contentete i nome della congregazione
+ */
+.main .toolbar{
+    width: 100%;
+    height: 56px;
+    background-color: #3e4240;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    padding: 8px;
+    box-sizing: border-box;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 1;
+}
+.main .toolbar
+.material-button{
+    color: #fff;
+}
+.main .toolbar
+.text{
+    margin-left: 8px;	
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+/* 
+ * Sezione che andr� a contenere la lista dei file
+ */
+.main .card{
+    background-color: #E0E0E0;
+    padding: 0;
+    position: relative;
+    margin: 8px;
+    /*-webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;*/
+    /*-ms-flex-preferred-size: auto;
+        flex-basis: auto;*/
+    min-width: 350px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    color: #3e4240;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    min-height: 243px;
+    display: flex;
+    flex-direction: column;
+}
+.main .card[type="riservato"] .material-icons.disabled{
+    color: #CCFF90;
+}	
+.main .card .title{
+
+}
+.main .card .title h3{
+    padding: 0px 16px;
+    height: 56px;
+    border-bottom: solid 1px #ccc;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #3e4240;
+    text-align: left;
+}
+.main .card > .content{
+    padding: 8px 32px;
+}
+
+.main .favcard{
+    -ms-flex-preferred-size:100%;
+    flex-basis:100%;
+}
+
+/* 
+ * Toolbar della sezione che adr� a contenere la lista dei file
+ */
+.main .card .toolbar{
+    height: 56px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: solid 1px #BDBDBD;
+    color: #3e4240;
+    font-size: 20px;
+    padding: 0px 16px;
+    background-color: #BDBDBD;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    margin: 0;
+}
+
+.main .card .toolbar
+.material-button{
+    color: #3e4240;
+    display: none;
+}
+
+.main .card .toolbar
+.title{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: flex;
+}
+.main .card .toolbar
+.title .material-icons{
+    margin-right: 8px;	
+}
+
+.main .card .toolbar
+.spacer{
+    -webkit-box-flex:1;
+    -ms-flex:1;
+    flex:1;
+}
+
+.main .card .noFileMessage,
+.main .card .loadingSpinner{
+    flex: 1;
+    min-width: 200px;
+    padding: 16px;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    box-sizing: border-box;
+    height: calc(100% - 60px);
+    background-color: #E0E0E0;
+    z-index: 5;
+    justify-content: center;
+}
+.main .card .noFileMessage.hidden,
+.main .card .loadingSpinner.hidden{
+    display: none;
+    pointer-events: none;
+}
+/*
+ * quando si caricano i file, assegnare il valore flex, tramite javascript, cos� che l'interfaccia sia dinaminca.
+ * 
+ * Sezione fav,aggiungere il paramtero flex-basis e impostarlo a 100%;
+ * cos� rispetter� i margini e si adatter� al contenuto.
+ * 
+ */
+
+/* 
+ * Lista che andr� a contenere i vari file
+ */
+.main .card .list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    /*margin: 8px 8px 0 8px;*/
+    overflow-x: auto;
+    flex-basis: auto;
+    min-height: 187px;
+}
+.main .card .list.blur{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+.main .card .list.align-left{
+    -webkit-box-pack: flex-start;
+    -ms-flex-pack: flex-start;
+    justify-content: flex-start;
+}
+
+.main .card .list.loading{
+    /*padding: 16px;*/
+}
+
+.main .card .list .file_spacer.active{
+    min-width: 8px;
+}
+
+
+
+/* 
+ * Elemento della lista con le informazioni del file
+ */
+.main .card .list
+.entry{
+    width: 155px;
+    height: 155px;
+    /*background: #fff;*/
+    border-left: solid 8px transparent;
+    border-right: solid 8px transparent;
+    border-top: solid 16px transparent;
+    border-bottom: solid 16px transparent;
+    font-size: 13px;
+    border-radius: 2px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    max-width: 400px;
+    min-width: 200px;
+    position: relative;
+}
+
+.main .card .list
+.entry:first-child{
+    border-left: solid 16px transparent;
+}
+
+.main .card .list
+.entry:last-child{
+    border-right: solid 16px transparent;
+}
+
+/* 
+ * Corpo dell'elemento della lista
+ */
+.main .card .list
+.entry
+.body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+.main .card .list
+.entry
+.body.blur{
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+}
+.main .card .list
+.entry
+.body .content{
+    width:100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: filter 0.3s ease-in-out;
+    -webkit-transition: -webkit-filter 0.3s ease-in-out;
+    transition: -webkit-filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out;
+    transition: filter 0.3s ease-in-out, -webkit-filter 0.3s ease-in-out;
+    background-color: rgba(245,245,245,0.8);
+}
+
+.main .card .list
+.entry
+.body .content.blur{
+    /*-webkit-filter: blur(10px);
+-moz-filter: blur(10px);
+-o-filter: blur(10px);
+-ms-filter: blur(10px);
+filter: blur(10px);*/
+}
+.main .card .list
+.entry
+.body .content.blur .fav-star{
+    cursor: default;	
+    pointer-events: none;
+}
+
+.main .card .list
+.entry
+.body .content
+.thumbnail{
+    margin: 0 auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: top;
+    object-position: top;
+    z-index: 1;
+    box-shadow: 0 0px 24px 0px rgba(0,0,0,.25);
+}
+
+.main .card .list
+.entry
+.body .content
+.thumbnail.waiting{
+    -o-object-position: center;
+    object-position: center;
+    width: 100%;
+}
+
+.main .card .list
+.entry
+.body .content
+.thumbnail.blur{
+    position: absolute;
+    width: calc(100% + 30px);
+    top: -15px;
+    left: -15px;
+    z-index: 0;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+}
+
+/* 
+ * Piede dell'elemento della lista
+ */
+.main .card .list
+.entry
+.footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: rgba(245,245,245,0.8);
+    border-top: solid 1px #e0e0e0;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 8px;
+    box-sizing: border-box;
+    box-shadow: none;
+    height: 56px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 2;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+    min-height: 0;
+    color: #3e4240;
+}
+
+.main .card .list
+.entry
+.footer .text{
+    width: 100%;
+    line-height: 20px;
+    max-height: calc(20px * 2);
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    margin-left: 8px;
+}
+
+/*
+ * Piede di tutta la pagina
+ */
+footer{
+    width: 100%;
+    background-color: #3e4240;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+    padding: 16px 24px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    z-index: 1;
+    font-size: 13px;
+    min-height: 64px;
+}
+
+footer
+.left-side{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    min-width: 200px;
+}
+
+.main .footer
+.right-side{
+    margin-left: 8px;
+}
+
+footer
+.right-side 
+.uInfo{
+    display: none;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+footer
+.right-side
+.uInfo
+.uData{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-right: 16px;
+}
+
+footer
+.right-side
+.uInfo
+.uData #signout-button{
+    color: #fff;
+}
+
+footer
+.right-side
+.uInfo
+.uData .uName{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+footer
+.right-side
+.uInfo
+.uImg{
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+footer
+.right-side
+.uInfo
+.uImg #usrImg{
+    width: 100%;
+    height: 100%;
+}
+
+footer
+.right-side
+.uLogin{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+.box_shadow_overlay{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 56px);
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.box_shadow{
+    position: absolute;
+    width: 30px;
+    height: 100%;
+    bottom: 0px;
+    pointer-events: none;
+    z-index: 2;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6);
+}
+.left_shadow{
+    left: -60px;
+}
+.right_shadow{
+    right: -60px;
+}

@@ -1,0 +1,118 @@
+/*
+ * Schermo con risoluzione massima di 600px
+ */
+@media (max-width:600px){
+	html{
+		font-size: 52.5%;
+	}
+	p{
+		font-size: 2rem;
+	}
+	
+	.header{
+		padding: 30px 0px	
+	}
+	
+	.header h1{
+		/*font-size:44px;
+		font-size:4.4rem;*/
+	}
+	
+	.main{
+		margin-top: 120px;
+	}
+	
+	.main .card{
+		min-width: 216px;
+		flex-basis: auto;
+	}
+	
+	.main .card .title{
+		font-size: 2.5rem;
+	}
+	
+	.main .toolbar
+	.text{
+		font-size: 2.3rem;
+	}
+}
+
+
+/*
+ * Schermo con risoluzione massima di 440px
+ */
+
+@media (max-width:440px){
+	html{
+		font-size: 38.5%;
+	}
+	p{
+		font-size: 2.4rem;
+	}
+	h3{
+		font-size: 4rem;
+	}
+	
+	.header{
+		padding: 20px 0px	
+	}
+	
+	.header h1{
+		/*font-size:34px;
+		font-size:3.4rem;*/
+	}
+	
+	.main{
+		margin-top: 84px;
+	}
+	
+	
+	.main .toolbar
+	.text{
+		font-size: 2.7rem;
+	}
+	
+	.main .card{
+		min-width: calc(100% - 16px);
+	}
+	
+	.main .card .title{
+		/*font-size: 16px;*/
+	}
+	.main .card .toolbar
+	.title{
+		/*font-size: 16px;*/
+	}
+	
+	.main .footer{
+    	flex-wrap: wrap;
+	}
+	
+	.main .footer
+	.left-side{
+		text-align: center;
+    	flex-basis: 100%;
+    	min-width: 0;
+	}
+	
+	.main .footer
+	.right-side{
+		margin-top: 16px;
+		margin-left: 0;
+	}
+	.main .footer
+	.right-side .material-button{
+		margin-left: 0;
+	}
+	
+	.main .footer
+	.right-side,
+	.main .footer
+	.right-side .uInfo,
+	.main .footer
+	.right-side .uLogin{
+		flex: 1;
+		justify-content: center;
+		text-align: center;
+	}
+}

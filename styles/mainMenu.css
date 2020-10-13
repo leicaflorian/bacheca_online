@@ -1,0 +1,176 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7-giu-2017, 19.05.32
+    Author     : Florian
+*/
+
+#mainMenuContainer{
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+    width: 100%;
+    height: 100%;
+    z-index: 2201;
+    pointer-events: none;
+}
+#mainMenuContainer.opened{
+    pointer-events: all;
+}
+
+#mainMenu{
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    left: -250px;
+    background: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+    display: flex;
+    flex-direction: column;
+}
+#mainMenu .hidden{
+    display: none;
+}
+
+#mainMenu .tooltip{
+    overflow: hidden;
+    height: 0;
+    font-size: .8em;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    text-align: center;
+    pointer-events: none;
+}
+
+#mainMenu .trimText{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#mainMenu .topBar{
+    height: 56px;
+    padding: 8px;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #f1f1f1;
+}
+#mainMenu .accedi{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#mainMenu .menu{
+    position: relative;
+    overflow: auto;
+}
+
+#mainMenu .userInfo{
+    padding: 8px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding-top: 15px;
+    background: #f1f1f1;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2);
+    min-height: 63px;
+}
+
+#mainMenu .userInfo.hidden{
+    display: none;
+}
+
+#mainMenu .userInfo .longText{
+    white-space: normal;
+}
+
+#mainMenu .userInfo .userName{
+    color: #607D8B;
+}
+#mainMenu .userInfo .userEmail{
+    color: #9E9E9E;
+    font-size: 0.7em;
+
+}
+
+#mainMenu .genericMessage,
+#mainMenu .noPermissions{
+    color: #607D8B;
+    width: 100%;
+    padding: 32px 16px;
+    text-align: center;
+    box-sizing: border-box;
+}
+#mainMenu .genericMessage .title,
+#mainMenu .noPermissions .title{
+    font-size: 1em;
+    width: 100%;
+    display: block;
+    margin-bottom: 8px;
+}
+#mainMenu .genericMessage .text,
+#mainMenu .noPermissions .text{
+    color: #9E9E9E;
+    font-size: .8em;
+    width: 100%;
+}
+
+
+#mainMenu .menuItems{
+    color: #607D8B;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#mainMenu .menuItems li{
+    padding: 12px;
+    display: -webkit-box;  
+    display: -ms-flexbox; 
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border: solid 1px transparent;
+    color: #3e4240;
+    font-size: .8em;
+}
+#mainMenu .menuItems li span{
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+#mainMenu .menuItems li:hover{
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    background: #ccc;
+    cursor: pointer;
+}
+#mainMenu .menuItems li .material-icons{
+    margin-right: 8px;
+    color: #777;
+}
+#mainMenu .menuItems li .material-icons:hover{
+    background: #ccc !important;
+    border: solid 1px transparent !important;
+}
