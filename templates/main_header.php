@@ -1,4 +1,4 @@
-﻿<html lang="it">
+<html lang="it">
     <head>
         <title><?php echo $titolo ?></title>
 
@@ -13,6 +13,12 @@
         <link rel="apple-touch-icon" href="/favicon.png">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/favicon.png" />
         <link rel="icon" href="/favicon.gif" />
+
+		<script>
+        if(window.location.protocol === "http:"){
+          window.location.protocol = "https:"
+        }
+        </script>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">

@@ -12,4 +12,3 @@
 	include("templates/main_body.php");
 	include("templates/main_footer.php");
  ?>
-
